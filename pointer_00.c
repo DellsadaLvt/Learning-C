@@ -85,3 +85,61 @@ void Section_04( void )
 	ptr = (int*)0x12;  // 0x12H = 18decimal;
 	printf("\nThe sixth update: %d", ptr);
 }
+
+
+
+
+
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
+
+
+void printStr( char * str );
+
+int main()
+{
+    //char str[]= "hello";
+    //( str );
+    
+    uint16_t a= 1;
+    uint16_t* u16ptr; // 2 byte
+    u16ptr= &a;
+    
+    uint8_t  b=2;
+    uint8_t* u8ptr;
+    u8ptr= &b;
+    
+    uint32_t c = 3;
+    
+    printf("The address of a: %p\n", u16ptr);
+    printf("the value of a: %d\n", *u16ptr);
+    u8ptr= (uint8_t*)u16ptr;
+    *u8ptr= 0xff;
+    printf("The value of a: %d\n", a);
+    *(u8ptr+1)= 0x71;
+    printf("The value of a: %d\n", a);
+    
+    u16ptr+= 3;
+    printf("The address of a: %p\n", u16ptr);
+    
+    u8ptr= (uint8_t*)u16ptr +1;
+    printf("The address of a: %p\n", u8ptr);
+    
+    return 0;
+}
+
+
+void printStr( char * str ){
+    for( uint8_t i=0; i< strlen(str); i++)
+        printf("%c",*(str+i));
+}
+
