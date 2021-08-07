@@ -37,7 +37,17 @@ typedef struct gpio1 {
 //struct gpio* gpioa= (struct gpio*)0x333333ul;
 //gpioa->crh= 1;
 //gpiob->crh= 1;
-
+/****************************************************/
+typedef struct {
+	unsigned char state:1;   // use one bit
+}bool;
+/*
+	bool state;
+	state.state= 1;
+	printf("The state is: %d\n", state.state);
+	state.state= ~state.state;
+	printf("The state is: %d\n", state.state);
+*/
 /*======================== MAIN ======================*/
 int main( void )
 {
