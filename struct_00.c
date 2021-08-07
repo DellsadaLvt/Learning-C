@@ -17,6 +17,27 @@ struct phanso
 
 typedef struct phanso PHANSO;
 
+
+
+
+/******************************************************/
+struct gpio {
+	volatile uint32_t crl;
+	volatile uint32_t crh;
+	volatile uint32_t odr;
+};
+
+
+typedef struct gpio1 {
+	volatile uint32_t crl;
+	volatile uint32_t crh;
+	volatile uint32_t odr;
+}gpioReg;
+#define gpiob ((gpioReg*)0x3333ul)
+//struct gpio* gpioa= (struct gpio*)0x333333ul;
+//gpioa->crh= 1;
+//gpiob->crh= 1;
+
 /*======================== MAIN ======================*/
 int main( void )
 {
